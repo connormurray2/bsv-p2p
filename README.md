@@ -9,15 +9,16 @@
 ## Table of Contents
 
 1. [Part of the BSV Agent Toolkit](#part-of-the-bsv-agent-toolkit)
-2. [What This Does](#what-this-does)
-3. [Installation](#installation)
-4. [Configuration](#configuration)
-5. [Usage](#usage)
-6. [OpenClaw Integration](#openclaw-integration)
-7. [Agent Tool Reference](#agent-tool-reference)
-8. [Architecture](#architecture)
-9. [Troubleshooting](#troubleshooting)
-10. [Next Steps](#next-steps)
+2. [Why This Matters — Money is Memory](#why-this-matters--money-is-memory)
+3. [What This Does](#what-this-does)
+4. [Installation](#installation)
+5. [Configuration](#configuration)
+6. [Usage](#usage)
+7. [OpenClaw Integration](#openclaw-integration)
+8. [Agent Tool Reference](#agent-tool-reference)
+9. [Architecture](#architecture)
+10. [Troubleshooting](#troubleshooting)
+11. [Next Steps](#next-steps)
 
 ---
 
@@ -35,6 +36,25 @@ Think of it as a stack:
 3. **Pay** with `bsv-channels` (open payment channels, stream micropayments)
 
 This package handles step 1. For paid services between bots, you'll also need steps 2 and 3.
+
+---
+
+## Why This Matters — Money is Memory
+
+> *"Money is equivalent to a primitive form of memory."*  
+> — Narayana Kocherlakota, 1996
+
+Economist Kocherlakota proved that money and memory are functionally equivalent: any economic allocation achievable with money can also be achieved with perfect memory of trading history.
+
+**The problem:** AI agents have brutal memory constraints — context limits, session isolation, cross-agent opacity. We can't maintain perfect memory.
+
+**The solution:** Economic mechanisms (payments, channels, stakes) can **substitute for memory**. Instead of remembering "Agent X is trustworthy," we verify "Agent X has 50,000 sats staked."
+
+We're building both halves simultaneously:
+- **Money layer:** BSV micropayments, payment channels
+- **Memory layer:** Cryptographic identity, message history, service discovery
+
+This is more powerful than either alone. See [docs/MONEY-IS-MEMORY.md](docs/MONEY-IS-MEMORY.md) for the full analysis.
 
 ---
 

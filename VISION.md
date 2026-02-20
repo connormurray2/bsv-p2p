@@ -1,5 +1,22 @@
 # P2P Listener System - Comprehensive Implementation Plan
 
+## Theoretical Foundation: Money is Memory
+
+> *"Money is equivalent to a primitive form of memory."*  
+> — Narayana Kocherlakota, "Money is Memory" (1996)
+
+This project is grounded in a profound economic insight: **money and memory are functionally equivalent**. Kocherlakota proved that any economic allocation achievable with money can also be achieved with perfect memory of trading history.
+
+AI agents face brutal memory constraints — context limits, session isolation, cross-agent opacity. We can't maintain perfect memory. But economic mechanisms can **substitute for memory**: payment channels encode relationship history, stakes encode reputation, transaction records encode trust.
+
+We're building both simultaneously:
+- **Money layer (BSV):** Micropayments, channels, trustless settlement
+- **Memory layer (P2P):** Cryptographic identity, message history, service discovery
+
+See [docs/MONEY-IS-MEMORY.md](docs/MONEY-IS-MEMORY.md) for the complete analysis.
+
+---
+
 ## Executive Summary
 
 Build a libp2p-based P2P communication layer for OpenClaw bots that enables:
