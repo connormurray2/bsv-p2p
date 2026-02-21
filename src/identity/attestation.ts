@@ -9,8 +9,6 @@
  */
 
 import { PrivateKey, PublicKey, Signature, Hash } from '@bsv/sdk'
-import { createEd25519PeerId } from '@libp2p/peer-id-factory'
-import { unmarshalPrivateKey } from '@libp2p/crypto/keys'
 import type { PeerId } from '@libp2p/interface'
 
 export interface IdentityAttestation {
@@ -91,7 +89,7 @@ export function verifyAttestation(attestation: IdentityAttestation): {
     const messageHash = Hash.sha256(Buffer.from(message, 'utf8'))
     
     // Parse signature and public key
-    const signature = Signature.fromDER(Buffer.from(attestation.signature, 'hex'))
+    const signature = Signature.fromDER([...Buffer.from(attestation.signature, 'hex')])
     const publicKey = PublicKey.fromString(attestation.bsvIdentityKey)
     
     // Verify signature - correct API is publicKey.verify(hash, sig)
